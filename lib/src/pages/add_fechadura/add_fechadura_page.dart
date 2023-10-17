@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trava_nfc/src/add_fechadura/lock_form.dart';
+import 'package:trava_nfc/src/pages/add_fechadura/lock_form.dart';
 
 class AddFechaduraPage extends StatelessWidget {
   const AddFechaduraPage({super.key});

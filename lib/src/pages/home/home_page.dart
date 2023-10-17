@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lottie/lottie.dart';
-import 'package:trava_nfc/src/add_fechadura/add_fechadura_page.dart';
-import 'package:trava_nfc/src/home/drawer_custom.dart';
-import 'package:trava_nfc/src/home/widgets/detalhes_fechaduras.dart';
+import 'package:trava_nfc/src/pages/add_fechadura/add_fechadura_page.dart';
+import 'package:trava_nfc/src/pages/detalhes/detalhes_page.dart';
+import 'package:trava_nfc/src/pages/home/drawer_custom.dart';
+import 'package:trava_nfc/src/pages/home/widgets/detalhes_fechaduras.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-  var vazio;
+  var vazio = true;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -49,13 +50,38 @@ class HomePage extends StatelessWidget {
             ? Container(
                 margin: const EdgeInsets.all(20),
                 color: const Color(0xFFD7F4E1),
-                child: const Column(
+                child: Column(
                   children: [
-                    DetalhesFechaduras(nome: "Fechadura 1", status: "aberto"),
-                    Divider(),
-                    DetalhesFechaduras(nome: "Fechadura 2", status: "fechado"),
-                    Divider(),
-                    DetalhesFechaduras(nome: "Fechadura 3", status: "aberto"),
+                    InkWell(
+                      child: DetalhesFechaduras(
+                          nome: "Fechadura 1", status: "aberto"),
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const DetalhesPage()));
+                      },
+                    ),
+                    InkWell(
+                      child: DetalhesFechaduras(
+                          nome: "Fechadura 2", status: "fechado"),
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const DetalhesPage()));
+                      },
+                    ),
+                    InkWell(
+                      child: DetalhesFechaduras(
+                          nome: "Fechadura 3", status: "aberto"),
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const DetalhesPage()));
+                      },
+                    ),
                   ],
                 ),
               )
