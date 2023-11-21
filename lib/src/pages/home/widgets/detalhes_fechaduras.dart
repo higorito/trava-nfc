@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class DetalhesFechaduras extends StatelessWidget {
   final String nome;
-  final String status;
+  final bool status;
 
   const DetalhesFechaduras(
       {super.key, required this.nome, required this.status});
@@ -31,7 +31,7 @@ class DetalhesFechaduras extends StatelessWidget {
       ),
       child: Row(
         children: [
-          (status == "aberto")
+          (status == true)
               ? SvgPicture.asset(
                   'assets/images/lock-open.svg',
                   height: 50,
@@ -54,8 +54,8 @@ class DetalhesFechaduras extends StatelessWidget {
                 ),
               ),
               Text(
-                'Status: $status',
-                style: (status == "fechado")
+                (status == true) ? 'Status: Aberto' : 'Status: Fechado',
+                style: (status == false)
                     ? const TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 14,

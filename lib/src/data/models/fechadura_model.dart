@@ -1,7 +1,7 @@
 class FechaduraModel {
-  String id;
+  int id;
   String nome;
-  String status;
+  bool status;
 
   FechaduraModel({
     required this.id,

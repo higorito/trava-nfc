@@ -3,7 +3,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lottie/lottie.dart';
 import 'package:trava_nfc/src/pages/add_fechadura/add_fechadura_page.dart';
 import 'package:trava_nfc/src/pages/detalhes/detalhes_page.dart';
+import 'package:trava_nfc/src/pages/historico/HistoricoPage.dart';
 import 'package:trava_nfc/src/pages/home/drawer_custom.dart';
+import 'package:trava_nfc/src/pages/home/widgets/ListarFechaduras.dart';
 import 'package:trava_nfc/src/pages/home/widgets/detalhes_fechaduras.dart';
 
 class HomePage extends StatelessWidget {
@@ -15,6 +17,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         key: _scaffoldKey,
         appBar: AppBar(
           leading: Builder(
@@ -44,47 +47,33 @@ class HomePage extends StatelessWidget {
             ),
           ),
           centerTitle: true,
+          actions: [
+            Container(
+              margin: const EdgeInsets.all(8),
+              decoration: ShapeDecoration(
+                color: const Color(0xFF14AE5C),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+              child: IconButton(
+                icon: const FaIcon(
+                  FontAwesomeIcons.history,
+                  color: Colors.white,
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HistoricoPage()));
+                },
+              ),
+            ),
+          ],
         ),
         drawer: const DrawerCustom(),
         body: (vazio == true)
-            ? Container(
-                margin: const EdgeInsets.all(20),
-                color: const Color(0xFFD7F4E1),
-                child: Column(
-                  children: [
-                    InkWell(
-                      child: DetalhesFechaduras(
-                          nome: "Fechadura 1", status: "aberto"),
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const DetalhesPage()));
-                      },
-                    ),
-                    InkWell(
-                      child: DetalhesFechaduras(
-                          nome: "Fechadura 2", status: "fechado"),
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const DetalhesPage()));
-                      },
-                    ),
-                    InkWell(
-                      child: DetalhesFechaduras(
-                          nome: "Fechadura 3", status: "aberto"),
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const DetalhesPage()));
-                      },
-                    ),
-                  ],
-                ),
-              )
+            ? const ListarFechaduras()
             : Center(
                 child: Container(
                   margin: const EdgeInsets.all(20),
@@ -157,6 +146,16 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const AddFechaduraPage()));
+          },
+          child: const FaIcon(FontAwesomeIcons.plus),
+          backgroundColor: const Color(0xFF14AE5C),
+        ),
       ),
     );
   }

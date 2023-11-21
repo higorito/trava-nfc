@@ -81,13 +81,8 @@ class DrawerCustom extends StatelessWidget {
             ),
           ),
           ListTile(
-            title: const Text('Item 1'),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            title: const Text('Item 2'),
+            leading: const Icon(Icons.history),
+            title: const Text('Histórico'),
             onTap: () {
               Navigator.pop(context);
             },
