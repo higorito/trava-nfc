@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class DrawerCustom extends StatelessWidget {
   const DrawerCustom({super.key});
-  final String urlfoto =
-      "https://media.licdn.com/dms/image/D4D03AQFEpJBLAqTYsg/profile-displayphoto-shrink_200_200/0/1666609866773?e=1702512000&v=beta&t=7qBbJCiX5tpZ8lL8xrveSC23vDhMInufP_rzl3c5Vk4";
+  // final String urlfoto =
+  //     "https://media.licdn.com/dms/image/D4D03AQFEpJBLAqTYsg/profile-displayphoto-shrink_200_200/0/1666609866773?e=1702512000&v=beta&t=7qBbJCiX5tpZ8lL8xrveSC23vDhMInufP_rzl3c5Vk4";
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +52,7 @@ class DrawerCustom extends StatelessWidget {
                       child: const Row(
                         children: [
                           CircleAvatar(
-                            backgroundImage: NetworkImage(urlfoto),
+                            backgroundImage: AssetImage('assets/images/eu.png'),
                             radius: 32.0,
                           ),
                           SizedBox(width: 16.0),
