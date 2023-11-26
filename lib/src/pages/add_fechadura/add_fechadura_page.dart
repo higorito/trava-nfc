@@ -8,11 +8,11 @@ class AddFechaduraPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Adicionar Fechadura'),
+        title: const Text('Adicionar Fechadura'),
         centerTitle: true,
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: LockForm(),
       ),
     );

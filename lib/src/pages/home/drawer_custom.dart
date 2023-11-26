@@ -49,14 +49,14 @@ class DrawerCustom extends StatelessWidget {
                           //     const BorderSide(color: Colors.green, width: 2.0),
                         ),
                       ),
-                      child: Row(
+                      child: const Row(
                         children: [
                           CircleAvatar(
                             backgroundImage: NetworkImage(urlfoto),
                             radius: 32.0,
                           ),
-                          const SizedBox(width: 16.0),
-                          const Column(
+                          SizedBox(width: 16.0),
+                          Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
@@ -85,6 +85,7 @@ class DrawerCustom extends StatelessWidget {
             title: const Text('Histórico'),
             onTap: () {
               Navigator.pop(context);
+              Navigator.pushNamed(context, '/historico');
             },
           ),
         ],

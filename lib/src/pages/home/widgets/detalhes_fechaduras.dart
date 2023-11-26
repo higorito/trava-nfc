@@ -11,7 +11,7 @@ class DetalhesFechaduras extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(6),
+      margin: const EdgeInsets.all(6),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: const Color(0xFFA3FCC1),

@@ -12,17 +12,17 @@ class FechaduraRepository {
     return [
       FechaduraModel(
         id: 1,
-        nome: 'Fechadura 1',
+        nome: 'Quarto 1',
         status: true,
       ),
       FechaduraModel(
         id: 2,
-        nome: 'Fechadura 2',
+        nome: 'Sala',
         status: false,
       ),
       FechaduraModel(
         id: 3,
-        nome: 'Fechadura 3',
+        nome: 'Quarto 2',
         status: true,
       ),
       FechaduraModel(
@@ -54,21 +54,6 @@ class FechaduraRepository {
         id: 9,
         nome: 'Fechadura 9',
         status: true,
-      ),
-      FechaduraModel(
-        id: 10,
-        nome: 'Fechadura 10',
-        status: false,
-      ),
-      FechaduraModel(
-        id: 11,
-        nome: 'Fechadura 11',
-        status: true,
-      ),
-      FechaduraModel(
-        id: 12,
-        nome: 'Fechadura 12',
-        status: false,
       ),
     ];
   }
